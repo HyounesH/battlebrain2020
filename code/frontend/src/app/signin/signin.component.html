@@ -1,0 +1,39 @@
+<div class="sidenav">
+  <div class="login-main-text">
+    <h2>Book Seat</h2>
+    <p>Login from here to .</p>
+  </div>
+</div>
+<div class="main">
+  <div class="col-md-6 col-sm-12">
+    <div class="login-form">
+      <form [formGroup]="signinForm" (ngSubmit)="signin()">
+        <div class="form-group">
+          <label>Username Or Email</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Username Or Email"
+            formControlName="username"
+          />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input
+            type="password"
+            class="form-control"
+            placeholder="Password"
+            formControlName="password"
+          />
+        </div>
+        <button
+          type="submit"
+          class="btn btn-black"
+          [disabled]="!signinForm.valid"
+        >
+          Sign in
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

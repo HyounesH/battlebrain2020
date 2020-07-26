@@ -1,0 +1,78 @@
+<div class="container ">
+  <div class="row">
+    <div class="col-sm-6 col-lg-6 col-md-6">
+      <div class="table">
+        <div class="table-ref">Table Ref : 100235</div>
+        <div class="row">
+              <div *ngFor="let seat of seats.rightSeats" class="col-sm-4 col-lg-4 col-md-6">
+              <input
+                id="{{ seat.id }}"
+                class="seat-select"
+                type="radio"
+                value="1"
+                name="seat[]"
+                (change) = "onSeatSelected(seat.id)"
+                [disabled] ="seat.prohibition === 1"
+              />
+              <label
+                for="{{ seat.id }}"
+                [ngClass]="{
+                  'seat-prohibition': seat.prohibition == 1,
+                  'seat': seat.prohibition == 0,
+                  'seat-booked' : seat.prohibition == 0 && seat.available ==0
+                }"
+              ></label>
+              </div>
+        </div>
+        <hr class="table-hr" />
+        <div class="row">
+          <div *ngFor="let seat of seats.leftSeats" class="col-sm-4 col-lg-4 col-md-6">
+          <input
+            id="{{ seat.id }}"
+            class="seat-select"
+            type="radio"
+            value="1"
+            name="seat[]"
+            (change) = "onSeatSelected(seat.id)"
+            [disabled] ="seat.prohibition === 1 || seat.available==0"
+          />
+          <label
+            for="{{ seat.id }}"
+            [ngClass]="{
+              'seat-prohibition': seat.prohibition == 1,
+              'seat': seat.prohibition == 0,
+              'seat-booked' : seat.prohibition == 0 && seat.available ==0
+            }"
+          ></label>
+          </div>
+    </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-lg-6 col-md-6">
+      <div class="jumbotron">
+        <h1 class="display-4">Seat Reservation</h1>
+        <p class="lead">Please select your set and fill the form below !</p>
+        <hr class="my-4">
+        <form [formGroup]="bookForm" (submit)="bookSeatSubmit()">
+          <div class="form-group row">
+            <label for="dateFrom" class="col-sm-4 col-form-label">Date From : </label>
+            <div class="col-sm-8">
+              <input type="date" class="form-control" id="dateFrom" formControlName="dateFrom">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="dateTo" class="col-sm-4 col-form-label">Date To :</label>
+            <div class="col-sm-8">
+              <input type="date" class="form-control" id="dateTo" formControlName="dateTo" >
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-10">
+              <button type="submit" class="btn btn-success" [disabled]="selectedSeat==0">Book</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let table of workTables" class="col-md-3">
+      <div class="stati bg-turquoise">
+        <div>
+          <a (click)="goToTablePage(table.id)" class="zone-details-link"><b>{{table.seatSize}}</b></a>
+          <span>{{table.reference}}</span>
+        </div>
+      </div>
+    </div>
+</div>
+</div>

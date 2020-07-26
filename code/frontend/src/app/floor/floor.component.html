@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    <div *ngFor="let floor of floors" class="col-md-3">
+      <div class="stati bg-turquoise">
+        <div>
+          <a class="zone-details-link" (click)="goToZonePage(floor.id)"><b>{{floor.zonesSize}}</b></a>
+          <span>{{floor.designation}}</span>
+        </div>
+      </div>
+    </div>
+</div>
+</div>

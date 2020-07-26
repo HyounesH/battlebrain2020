@@ -1,0 +1,66 @@
+.container {
+  margin-top: 20px;
+}
+.table {
+  margin: 0;
+  padding: 0;
+}
+
+.table{
+  padding: 5px;
+  border: 1px solid gray;
+  outline-color:gray;
+  border-radius: 2px;
+}
+.table-ref {
+  text-align: center;
+
+}
+.table-hr {
+  position: relative;
+  width:100%;
+  text-align:left;
+  margin-left:0;
+}
+
+.seat {
+  float: left;
+  display: block;
+  margin: 5px;
+  background: #4CAF50;
+  width: 120px;
+  height: 180px;
+  border-radius: 15px;
+}
+
+.seat-select {
+  display: none;
+}
+
+.seat-select:checked+.seat {
+  background: #F44336;
+}
+.seat-prohibition {
+  float: left;
+  display: block;
+  margin: 5px;
+  background: #a817cc;
+  width: 120px;
+  height: 180px;
+  border-radius: 15px;
+}
+.seat-booked {
+  float: left;
+  display: block;
+  margin: 5px;
+  background: #F44336;
+  width: 120px;
+  height: 180px;
+  border-radius: 15px;
+}
+.jumbotron {
+  background-color: gainsboro !important;
+}
+.btn-success {
+  width: 120%;
+}
