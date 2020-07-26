@@ -15,7 +15,8 @@
   $ npm install
   $ ng serve
   
-  
+3. go to : http://localhost:4200/
+
 Info tu use to authenticate to the project :
 
 => Available User: 
